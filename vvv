@@ -2,3 +2,41 @@
 
 
 nk
+
+
+
+Certainly! To handle special characters properly in Ruby, you should escape them correctly within the string. However, in this specific string, there are no special characters that require escaping for Ruby. The script provided should already work correctly in Ruby as is.
+
+If you still want to ensure that the string is correctly recognized, here's the script with explicit double quotes around the search string:
+
+```ruby
+# Define the file path and the string to search for
+file_path = '/etc/chef/vvv.txt'
+search_string = "<Environment name=\"isSunohPilotServer\" override=\"false\" type=\"java.lang.Boolean\" value=\"true\"/>"
+
+# Read the file and check if the string is present
+if File.read(file_path).include?(search_string)
+  puts "String found."
+else
+  puts "String not found."
+end
+```
+
+### Explanation:
+- The `search_string` is defined with double quotes to correctly interpret the inner double quotes within the string.
+
+### Full Script in Ruby:
+```ruby
+# Define the file path and the string to search for
+file_path = '/etc/chef/vvv.txt'
+search_string = "<Environment name=\"isSunohPilotServer\" override=\"false\" type=\"java.lang.Boolean\" value=\"true\"/>"
+
+# Read the file and check if the string is present
+if File.read(file_path).include?(search_string)
+  puts "String found."
+else
+  puts "String not found."
+end
+```
+
+Save this script to a file (e.g., `check_string.rb`) and run it with `ruby check_string.rb`. This ensures that the string comparison will work correctly in Ruby.
