@@ -1,3 +1,17 @@
+
+
+find /data/eclinicalworks/cloudoci/apache2/webapps/cloudfeed/asp30/pod1/patches/bulk_patches -type f -mtime +365 -print0 | xargs -0 du -sh | awk '{total += $1} END {printf "Total size: %.2f GB\n", total / 1024}'
+
+
+
+
+
+find /data/eclinicalworks/cloudoci/apache2/webapps/cloudfeed/asp30/pod1/patches/bulk_patches -type f -mtime +365 -print0 | xargs -0 du -sh | awk '{total += $1} END {print "Total size: " total}'
+
+
+
+
+
 DELIMITER $$
 CREATE PROCEDURE insert_QATomcats(
   IN p_ip VARCHAR(255),
